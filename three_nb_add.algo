@@ -1,22 +1,22 @@
 ALGORITHM sentence_search
 VAR
     sentence : string;
-    sentence_length : INTEGER := 0;
-    words_number: INTEGER := 0;
-    vowels_number : INTEGER := 0;
+    sentence_length : INTEGER = 0;
+    words_number: INTEGER = 0;
+    vowels_number : INTEGER = 0;
     i:=0;
 BEGIN
     Read(sentence);
     REPEAT
         SWITCH (sentence[i]) DO
-        case " " : words_number=words_number+1;sentence_length=sentence_length+1;BREAK;
-        case "a","e","i","o","u","y": vowels_number= vowels_number+1;sentence_length=sentence_length+1; BREAK;
-        default : sentence_length=sentence_length+1;
+        case " " : words_number:=words_number+1;sentence_length:=sentence_length+1;BREAK;
+        case "a","e","i","o","u","y": vowels_number:= vowels_number+1;sentence_length:=sentence_length+1; BREAK;
+        default : sentence_length:=sentence_length+1;
         END_SWITCH
         i=i+1;
     UNTIL (sentence[i]=".")
-    sentence_length=sentence_length+1;
-    words_number=words_number+1;
+    sentence_length:=sentence_length+1;
+    words_number:=words_number+1;
     Write("The length of the sentence is : ",sentence_length);
     Write("The number of words in the sentence is : ",words_number);
     Write("The number of vowels in the sentence is : ",vowels_number);
